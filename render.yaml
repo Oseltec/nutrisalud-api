@@ -1,17 +1,16 @@
-name: nutrisalud-api
-version: "1.0.0"
-buildCommand: npm install
-startCommand: npm start
-envVars:
-  - key: JWT_SECRET
-    description: Secret key for JWT tokens
-    value: nutrisalud-secret-key-2024-secure
-  - key: JWT_EXPIRES_IN
-    description: Token expiration time
-    value: 7d
-  - key: PORT
-    description: Server port
-    value: "10000"
-  - key: NODE_ENV
-    description: Environment
-    value: production
+services:
+  - type: web
+    name: nutrisalud-api
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: JWT_SECRET
+        value: nutrisalud-secret-key-2024-secure
+      - key: JWT_EXPIRES_IN
+        value: 7d
+      - key: PORT
+        value: 10000
+      - key: NODE_ENV
+        value: production
